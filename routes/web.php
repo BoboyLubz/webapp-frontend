@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,19 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage'); //ako gi change ang welcome into homepage
-});
+Route::get('/', [PagesController::class, 'index']);
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', [PagesController::class, 'login']);
 
-Route::get('/register', function () {
-    return view('register');
-});
+Route::get('/register', [PagesController::class, 'register']);
 
-Route::get('/password', function () {
-    return view('password');
-});
+Route::get('/password', [PagesController::class, 'password']);
 
